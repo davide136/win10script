@@ -208,21 +208,7 @@ Function InstallAdobe {
 
 Function InstallJava {
 	Write-Output "Installing Java and stuff"
-	choco install jre8 -y
-	choco install googlechrome -y
-	choco install dotnetfx -y
-	choco install skype -y
-	choco install ccleaner -y
-	choco install gimp -y
-	choco install pdfcreator -y
-	choco install teamviewer -y
-	choco install openoffice -y
-	choco install k-litecodecpackfull -y
-	choco install thunderbird -y
-	choco install firefoxesr -y
-	choco install cdburnerxp -y
-	choco install sumatrapdf.install -y
-	choco install audacity -y
+	choco install jre8 googlechrome dotnetfx skype ccleaner gimp pdfcreator teamviewer openoffice k-litecodecpackfull thunderbird firefoxesr cdburnerxp sumatrapdf.install audacity -y
 }
 
 Function Install7Zip {
