@@ -214,7 +214,7 @@ Function InstallJava {
 
 Function Install7Zip {
 	Write-Output "Installing 7-Zip"
-	choco install 7zip jre8 googlechrome dotnetfx skype ccleaner gimp pdfcreator teamviewer openoffice k-litecodecpackfull thunderbird firefoxesr cdburnerxp sumatrapdf.install audacity -y
+	choco install 7zip jre8 googlechrome dotnetfx skype ccleaner gimp pdfcreator teamviewer openoffice k-litecodecpackfull thunderbird firefoxesr cdburnerxp sumatrapdf.install audacity -y --ignore-checksum
 }
 
 Function InstallNotepadplusplus {
