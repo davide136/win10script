@@ -210,12 +210,12 @@ Function InstallAdobe {
 
 Function InstallJava {
 	Write-Output "Installing Java and stuff"
-	choco install jre8 -y
+#	choco install jre8 -y
 }
 
 Function Install7Zip {
 	Write-Output "Installing 7-Zip"
-	choco install 7zip jre8 googlechrome dotnetfx skype ccleaner gimp pdfcreator teamviewer openoffice k-litecodecpackfull thunderbird firefoxesr cdburnerxp sumatrapdf.install audacity -y --ignore-checksum
+	choco install 7zip jre8 googlechrome dotnetfx skype ccleaner gimp pdfcreator teamviewer openoffice k-litecodecpackfull thunderbird firefoxesr cdburnerxp sumatrapdf.install audacity anydesk.install batterybar -y --ignore-checksum
 }
 
 Function InstallNotepadplusplus {
