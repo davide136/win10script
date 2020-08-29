@@ -30,36 +30,38 @@ $tweaks = @(
 "RequireAdmin",
 
 ### External Program Setup
-	"InstallTitusProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
-	"Install7Zip",
-	"InstallJava",
-	"InstallNotepadplusplus",
-	"InstallMediaPlayerClassic",
-	"Installgooglechrome",
-	"Installdotnetfx",
-	"Installskype",
-	"Installccleaner",
-	"Installgimp",
-	"Installpdfcreator",
-	"Installopenoffice",
-	"Installk-litecodecpackfull",
-	"Installteamviewer",
-	"Installthunderbird",
-	"Installfirefoxesr",
-	"Installcdburnerxp",
-	"Installsumatrapdf",
-	"Installaudacity",
-	"Installanydesk",
-	"Installbatterybar",
+"InstallTitusProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
+"Install7Zip",
+"InstallJava",
+"InstallNotepadplusplus",
+"InstallMediaPlayerClassic",
+"Installgooglechrome",
+"InstallUBlockChrome",
+"Installdotnetfx",
+"Installskype",
+"Installccleaner",
+"Installgimp",
+"Installpdfcreator",
+"Installopenoffice",
+"Installk-litecodecpackfull",
+"Installteamviewer",
+"Installthunderbird",
+"Installfirefox",
+"InstallAdBlockFirefox",
+"Installcdburnerxp",
+"Installsumatrapdf",
+"Installaudacity",
+"Installanydesk",
+"Installbatterybar",
 
 ### Windows Apps
-"DebloatAll",
+#"DebloatAll",
 
 ### Privacy Tweaks ###
 "DisableTelemetry",             # "EnableTelemetry",
 "DisableWiFiSense",             # "EnableWiFiSense",
 "DisableSmartScreen",         # "EnableSmartScreen",
-"DisableWebSearch",             # "EnableWebSearch",
+#"DisableWebSearch",             # "EnableWebSearch",
 "DisableAppSuggestions",        # "EnableAppSuggestions",
 "DisableActivityHistory",       # "EnableActivityHistory",
 "DisableBackgroundApps",        # "EnableBackgroundApps",
@@ -68,7 +70,7 @@ $tweaks = @(
 "DisableFeedback",              # "EnableFeedback",
 "DisableTailoredExperiences",   # "EnableTailoredExperiences",
 "DisableAdvertisingID",         # "EnableAdvertisingID",
-"DisableCortana",               # "EnableCortana",
+#"DisableCortana",               # "EnableCortana",
 "DisableErrorReporting",        # "EnableErrorReporting",
 "SetP2PUpdateLocal",          # "SetP2PUpdateInternet",
 "DisableDiagTrack",             # "EnableDiagTrack",
@@ -76,24 +78,26 @@ $tweaks = @(
 
 ### Security Tweaks ###
 "SetUACLow",                  # "SetUACHigh",
-# "EnableSharingMappedDrives",  "DisableSharingMappedDrives",
-"DisableAdminShares",           # "EnableAdminShares",
-"DisableSMB1",                # "EnableSMB1",
-"DisableSMBServer",           # "EnableSMBServer",
-"DisableLLMNR",               # "EnableLLMNR",
+# "EnableSharingMappedDrives",  # "DisableSharingMappedDrives",
+# "DisableAdminShares",           # "EnableAdminShares",
+#"DisableSMB1",                # "EnableSMB1",
+# "DisableSMBServer",           # "EnableSMBServer",
+# "DisableLLMNR",               # "EnableLLMNR",
 #"SetCurrentNetworkPrivate",     # "SetCurrentNetworkPublic",
 #"SetUnknownNetworksPrivate",   "SetUnknownNetworksPublic",
 #"DisableNetDevicesAutoInst",  # "EnableNetDevicesAutoInst",
 "DisableCtrldFolderAccess",	# "EnableCtrldFolderAccess",
-"DisableFirewall",            # "EnableFirewall",
-"DisableDefender",            # "EnableDefender",
-"DisableDefenderCloud",       # "EnableDefenderCloud",
+#"DisableFirewall",
+"EnableFirewall",
+#"DisableDefender",            # "EnableDefender",
+#"DisableDefenderCloud",       # "EnableDefenderCloud",
 "EnableF8BootMenu",             # "DisableF8BootMenu",
 #"SetDEPOptOut",                 # "SetDEPOptIn",
 # "EnableCIMemoryIntegrity",    # "DisableCIMemoryIntegrity",
 #"DisableScriptHost",            # "EnableScriptHost",
 #"EnableDotNetStrongCrypto",     # "DisableDotNetStrongCrypto",
 "DisableMeltdownCompatFlag", # "EnableMeltdownCompatFlag"
+
 
 ### Service Tweaks ###
 "DisableUpdateMSRT",          # "EnableUpdateMSRT",
@@ -102,26 +106,23 @@ $tweaks = @(
 "DisableHomeGroups",          # "EnableHomeGroups",
 "DisableSharedExperiences",     # "EnableSharedExperiences",
 #"DisableRemoteAssistance",      # "EnableRemoteAssistance",
-#"EnableRemoteDesktop",
-"DisableRemoteDesktop",
-"DisableAutoplay",              # "EnableAutoplay",
-"DisableAutorun",               # "EnableAutorun",
+#"EnableRemoteDesktop",          # "DisableRemoteDesktop",
+#"DisableAutoplay",              # "EnableAutoplay",
+#"DisableAutorun",               # "EnableAutorun",
 "DisableStorageSense",        # "EnableStorageSense",
 "DisableDefragmentation",     # "EnableDefragmentation",
 "DisableSuperfetch",          # "EnableSuperfetch",
 "DisableIndexing",            # "EnableIndexing",
-"SetBIOSTimeUTC",             # "SetBIOSTimeLocal",
-#"DisableHibernation",
-"EnableHibernation",
-"EnableSleepButton",		# "DisableSleepButton",
-"DisableSleepTimeout",        # "EnableSleepTimeout",
-# "DisableFastStartup",
-"EnableFastStartup",
+#"SetBIOSTimeUTC",             # "SetBIOSTimeLocal",
+#"DisableHibernation",		# "EnableHibernation",          #
+#"EnableSleepButton",		# "DisableSleepButton",
+#"DisableSleepTimeout",        # "EnableSleepTimeout",
+# "DisableFastStartup",         # "EnableFastStartup",
 
 ### UI Tweaks ###
-"DisableActionCenter",          # "EnableActionCenter",
-"DisableLockScreen",            # "EnableLockScreen",
-"DisableLockScreenRS1",       # "EnableLockScreenRS1",
+#"DisableActionCenter",          # "EnableActionCenter",
+#"DisableLockScreen",            # "EnableLockScreen",
+#"DisableLockScreenRS1",       # "EnableLockScreenRS1",
 # "HideNetworkFromLockScreen",    # "ShowNetworkOnLockScreen",
 # "HideShutdownFromLockScreen",   # "ShowShutdownOnLockScreen",
 "DisableStickyKeys",            # "EnableStickyKeys",
@@ -130,14 +131,15 @@ $tweaks = @(
 "DisableFileDeleteConfirm",	# "EnableFileDeleteConfirm",
 #"HideTaskbarSearch",
 "ShowTaskbarSearchIcon",      # "ShowTaskbarSearchBox",
-"HideTaskView",                 # "ShowTaskView",
+#"HideTaskView",
+"ShowTaskView",
 # "ShowSmallTaskbarIcons",        # "ShowLargeTaskbarIcons",
 # "SetTaskbarCombineWhenFull",    # "SetTaskbarCombineNever",     # "SetTaskbarCombineAlways",
-# "HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
+"HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
 #"ShowTrayIcons",
-"HideTrayIcons",
+#"HideTrayIcons",
 "DisableSearchAppInStore",      # "EnableSearchAppInStore",
-"DisableNewAppPrompt",          # "EnableNewAppPrompt",
+#"DisableNewAppPrompt",          # "EnableNewAppPrompt",
 # "SetControlPanelSmallIcons",  # "SetControlPanelLargeIcons",  # "SetControlPanelCategories",
 # "SetVisualFXPerformance",     # "SetVisualFXAppearance",
 # "AddENKeyboard",              # "RemoveENKeyboard",
@@ -173,11 +175,11 @@ $tweaks = @(
 
 ### Application Tweaks ###
 "DisableOneDrive",              # "EnableOneDrive",
-"UninstallOneDrive",            # "InstallOneDrive",
-"UninstallMsftBloat",           # "InstallMsftBloat",
-"UninstallThirdPartyBloat",     # "InstallThirdPartyBloat",
+#"UninstallOneDrive",            # "InstallOneDrive",
+#"UninstallMsftBloat",           # "InstallMsftBloat",
+#"UninstallThirdPartyBloat",     # "InstallThirdPartyBloat",
 # "UninstallWindowsStore",      # "InstallWindowsStore",
-#"DisableXboxFeatures",          # "EnableXboxFeatures",
+# "DisableXboxFeatures",          # "EnableXboxFeatures",
 "DisableAdobeFlash",            # "EnableAdobeFlash",
 "InstallMediaPlayer", 		# "UninstallMediaPlayer",
 #"UninstallInternetExplorer",  # "InstallInternetExplorer",
@@ -199,7 +201,7 @@ $tweaks = @(
 # "EnableAudio",                # "DisableAudio",
 
 ### Unpinning ###
-"UnpinStartMenuTiles",
+#"UnpinStartMenuTiles",
 #"UnpinTaskbarIcons",
 
 ### Auxiliary Functions ###
@@ -223,6 +225,7 @@ Function InstallTitusProgs {
 }
 
 
+
 Function InstallJava {
 	Write-Output "Installing Java and stuff"
 	choco install jre8 -y --ignore-checksum
@@ -236,6 +239,16 @@ Function Installbatterybar {
 Function Installanydesk {
 	Write-Output "Installing anydesk"
 	choco install anydesk.install -y --ignore-checksum
+}
+
+Function InstallUBlockChrome {
+	Write-Output "Installing anydesk"
+	choco install ublockorigin-chrome -y --ignore-checksum
+}
+
+Function InstallAdBlockFirefox {
+	Write-Output "Installing anydesk"
+	choco install adblockplus-firefox -y --ignore-checksum
 }
 
 Function Installaudacity {
@@ -253,8 +266,8 @@ Function Installcdburnerxp {
 	choco install cdburnerxp -y --ignore-checksum
 }
 
-Function Installfirefoxesr {
-	Write-Output "Installing firefoxesr"
+Function Installfirefox {
+	Write-Output "Installing firefox"
 	choco install firefoxesr -y --ignore-checksum
 }
 
