@@ -51,6 +51,8 @@ $tweaks = @(
 	"Installsumatrapdf",
 #	"Installaudacity",
 	"Installanydesk",
+	"InstallNVidia",
+	"InstallEpic",
 	"InstallPlaynite",
 	"InstallDX",
 	"InstallPCSX2",
@@ -353,6 +355,11 @@ Function Installgooglechrome {
 	choco install googlechrome -y --ignore-checksum
 }
 
+Function InstallEpic {
+	Write-Output "Installing epicgames"
+	choco install epicgameslauncher -y --ignore-checksum
+}
+
 Function Install7Zip {
 	Write-Output "Installing 7-Zip"
 	choco install 7zip -y --ignore-checksum
@@ -366,6 +373,13 @@ Function InstallNotepadplusplus {
 Function InstallMediaPlayerClassic {
 	Write-Output "Installing Media Player Classic (VLC Alternative)"
 	choco install mpc-hc -y --ignore-checksum
+}
+
+Function InstallNVidia {
+	Write-Output "Installing Nvidia Driver and optimizing"
+	choco install nvidia-display-driver -y --ignore-checksum
+	choco install disable-nvidia-telemetry -y --ignore-checksum
+	reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NvTelemetryContainer.exe" /v Debugger /t REG_SZ /d "%windir%\System32\taskkill.exe" /f
 }
 
 ##########

@@ -37,6 +37,7 @@ $tweaks = @(
 "InstallMediaPlayerClassic",
 	"Installgooglechrome",
 "Installdotnetfx",
+"Installmsiafterburner",
 #	"Installskype",
 "Installccleaner",
 #	"Installgimp",
@@ -46,6 +47,7 @@ $tweaks = @(
 #	"Installteamviewer",
 	"Installthunderbird",
 "Installfirefoxesr",
+"InstallAndroidstudio",
 "Installcdburnerxp",
 "Installsumatrapdf",
 	"Installaudacity",
@@ -57,6 +59,10 @@ $tweaks = @(
 #"InstallDolphin",
 "InstallGameBooster",
 "InstallSteam",
+"InstallEpic",
+"InstallBattle.net",
+"Installdiscord",
+"InstallNVidia",
 #"InstallUplay",
 #	"Installbatterybar",
 
@@ -308,6 +314,31 @@ Function Installthunderbird {
 	choco install thunderbird -y --ignore-checksum
 }
 
+Function Installmsiafterburner {
+	Write-Output "Installing msiafterburner"
+	choco install msiafterburner -y --ignore-checksum
+}
+
+Function InstallAndroidstudio {
+	Write-Output "Installing androidstudio"
+	choco install androidstudio -y --ignore-checksum
+}
+
+Function InstallEpic {
+	Write-Output "Installing epicgames"
+	choco install epicgameslauncher -y --ignore-checksum
+}
+
+Function Installdiscord {
+	Write-Output "Installing discord"
+	choco install discord.install -y --ignore-checksum
+}
+
+Function InstallBattle.net {
+	Write-Output "Installing battle net"
+	choco install choco install battle.net -y --ignore-checksum
+}
+
 Function Installteamviewer {
 	Write-Output "Installing teamviewer"
 	choco install teamviewer -y --ignore-checksum
@@ -366,6 +397,13 @@ Function InstallNotepadplusplus {
 Function InstallMediaPlayerClassic {
 	Write-Output "Installing Media Player Classic (VLC Alternative)"
 	choco install mpc-hc -y --ignore-checksum
+}
+
+Function InstallNVidia {
+	Write-Output "Installing Nvidia Driver and optimizing"
+	choco install nvidia-display-driver -y --ignore-checksum
+	choco install disable-nvidia-telemetry -y --ignore-checksum
+	reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NvTelemetryContainer.exe" /v Debugger /t REG_SZ /d "%windir%\System32\taskkill.exe" /f
 }
 
 ##########
