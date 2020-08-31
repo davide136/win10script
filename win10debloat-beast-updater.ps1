@@ -63,6 +63,15 @@ $tweaks = @(
 "InstallBattle.net",
 "Installdiscord",
 "InstallNVidia",
+"InstallHWMonitor",
+"InstallPutty",
+"InstallFilezilla",
+"InstallPython",
+"InstallDropbox",
+"InstallHandbrake",
+"InstallOBSStudio",
+"InstallZoom",
+
 #"InstallUplay",
 #	"Installbatterybar",
 
@@ -332,6 +341,46 @@ Function InstallEpic {
 Function Installdiscord {
 	Write-Output "Installing discord"
 	choco install discord.install -y --ignore-checksum
+}
+
+Function InstallHWMonitor {
+	Write-Output "Installing hwmonitor"
+	choco install hwmonitor -y --ignore-checksum
+}
+
+Function InstallPutty {
+	Write-Output "Installing putty"
+	choco install putty.install -y --ignore-checksum
+}
+
+Function InstallFilezilla {
+	Write-Output "Installing filezilla"
+	choco install filezilla -y --ignore-checksum
+}
+
+Function InstallPython {
+	Write-Output "Installing python"
+	choco install python -y --ignore-checksum
+}
+
+Function InstallDropbox {
+	Write-Output "Installing dropbox"
+	choco install dropbox -y --ignore-checksum
+}
+
+Function InstallHandbrake {
+	Write-Output "Installing handbrake"
+	choco install handbrake -y --ignore-checksum
+}
+
+Function InstallOBSStudio {
+	Write-Output "Installing obs"
+	choco install obs-studio -y --ignore-checksum
+}
+
+Function InstallZoom {
+	Write-Output "Installing zoom"
+	choco install zoom -y --ignore-checksum
 }
 
 Function InstallBattle.net {
