@@ -42,6 +42,7 @@ $tweaks = @(
 "Installccleaner",
 "Installgimp",
 "Installpdfcreator",
+"Installqbittorrent",
 "Installopenoffice",
 "Installk-litecodecpackfull",
 "Installteamviewer",
@@ -289,6 +290,11 @@ Function Installk-litecodecpackfull {
 Function Installopenoffice {
 	Write-Output "Installing openoffice"
 	choco install openoffice -y --ignore-checksum
+}
+
+Function Installqbittorrent {
+	Write-Output "Installing qbittorrent"
+	choco install qbittorrent -y --ignore-checksum
 }
 
 Function Installpdfcreator {

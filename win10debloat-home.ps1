@@ -47,6 +47,7 @@ $tweaks = @(
 #	"Installthunderbird",
 	"Installfirefoxesr",
 	"Installcdburnerxp",
+	"Installqbittorrent",
 	"Installsumatrapdf",
 #	"Installaudacity",
 	"Installanydesk",
@@ -310,6 +311,11 @@ Function Installteamviewer {
 Function Installk-litecodecpackfull {
 	Write-Output "Installing k-litecodecpackfull"
 	choco install k-litecodecpackfull -y --ignore-checksum
+}
+
+Function Installqbittorrent {
+	Write-Output "Installing qbittorrent"
+	choco install qbittorrent -y --ignore-checksum
 }
 
 Function Installopenoffice {

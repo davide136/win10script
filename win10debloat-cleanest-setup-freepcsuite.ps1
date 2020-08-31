@@ -43,6 +43,7 @@ $tweaks = @(
 	"Installpdfcreator",
 	"Installopenoffice",
 	"Installk-litecodecpackfull",
+"Installqbittorrent",
 	"Installteamviewer",
 	"Installthunderbird",
 	"Installfirefoxesr",
@@ -301,6 +302,11 @@ Function Installskype {
 Function Installdotnetfx {
 	Write-Output "Installing dotnetfx"
 	choco install dotnetfx -y --ignore-checksum
+}
+
+Function Installqbittorrent {
+	Write-Output "Installing qbittorrent"
+	choco install qbittorrent -y --ignore-checksum
 }
 
 Function Installgooglechrome {

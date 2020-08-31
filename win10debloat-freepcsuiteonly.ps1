@@ -39,6 +39,7 @@ $tweaks = @(
 "InstallUBlockChrome",
 "Installdotnetfx",
 "Installskype",
+"Installqbittorrent",
 "Installccleaner",
 "Installgimp",
 "Installpdfcreator",
@@ -239,6 +240,11 @@ Function Installbatterybar {
 Function Installanydesk {
 	Write-Output "Installing anydesk"
 	choco install anydesk.install -y --ignore-checksum
+}
+
+Function Installqbittorrent {
+	Write-Output "Installing qbittorrent"
+	choco install qbittorrent -y --ignore-checksum
 }
 
 Function InstallUBlockChrome {

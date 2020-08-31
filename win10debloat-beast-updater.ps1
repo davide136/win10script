@@ -35,24 +35,30 @@ $tweaks = @(
 "InstallJava",
 "InstallNotepadplusplus",
 "InstallMediaPlayerClassic",
-"Installgooglechrome",
-"InstallUBlockChrome",
+	"Installgooglechrome",
 "Installdotnetfx",
-#"Installskype",
+#	"Installskype",
 "Installccleaner",
-#"Installgimp",
-"Installpdfcreator",
-"Installopenoffice",
+#	"Installgimp",
+	"Installpdfcreator",
+#	"Installopenoffice",
 "Installk-litecodecpackfull",
-"Installteamviewer",
-"Installthunderbird",
-"Installfirefox",
-#"InstallAdBlockFirefox",
+#	"Installteamviewer",
+	"Installthunderbird",
+"Installfirefoxesr",
 "Installcdburnerxp",
 "Installsumatrapdf",
-"Installaudacity",
+	"Installaudacity",
+"Installqbittorrent",
 "Installanydesk",
-#"Installbatterybar",
+#"InstallPlaynite",
+"InstallDX",
+#"InstallPCSX2",
+#"InstallDolphin",
+"InstallGameBooster",
+"InstallSteam",
+#"InstallUplay",
+#	"Installbatterybar",
 
 ### Windows Apps
 "DebloatAll",
@@ -87,8 +93,7 @@ $tweaks = @(
 #"SetUnknownNetworksPrivate",   "SetUnknownNetworksPublic",
 #"DisableNetDevicesAutoInst",  # "EnableNetDevicesAutoInst",
 "DisableCtrldFolderAccess",	# "EnableCtrldFolderAccess",
-#"DisableFirewall",
-"EnableFirewall",
+"DisableFirewall",            # "EnableFirewall",
 #"DisableDefender",            # "EnableDefender",
 #"DisableDefenderCloud",       # "EnableDefenderCloud",
 "EnableF8BootMenu",             # "DisableF8BootMenu",
@@ -130,13 +135,11 @@ $tweaks = @(
 "DisableFileDeleteConfirm",	# "EnableFileDeleteConfirm",
 #"HideTaskbarSearch",
 "ShowTaskbarSearchIcon",      # "ShowTaskbarSearchBox",
-#"HideTaskView",
-"ShowTaskView",
+"HideTaskView",                 # "ShowTaskView",
 # "ShowSmallTaskbarIcons",        # "ShowLargeTaskbarIcons",
 # "SetTaskbarCombineWhenFull",    # "SetTaskbarCombineNever",     # "SetTaskbarCombineAlways",
-"HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
-#"ShowTrayIcons",
-"HideTrayIcons",
+# "HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
+"ShowTrayIcons",                # "HideTrayIcons",
 "DisableSearchAppInStore",      # "EnableSearchAppInStore",
 "DisableNewAppPrompt",          # "EnableNewAppPrompt",
 # "SetControlPanelSmallIcons",  # "SetControlPanelLargeIcons",  # "SetControlPanelCategories",
@@ -181,9 +184,9 @@ $tweaks = @(
 # "DisableXboxFeatures",          # "EnableXboxFeatures",
 "DisableAdobeFlash",            # "EnableAdobeFlash",
 "InstallMediaPlayer", 		# "UninstallMediaPlayer",
-"UninstallInternetExplorer",  # "InstallInternetExplorer",
+#"UninstallInternetExplorer",  # "InstallInternetExplorer",
 "UninstallWorkFolders",       # "InstallWorkFolders",
-"InstallLinuxSubsystem",      # "UninstallLinuxSubsystem",
+#"InstallLinuxSubsystem",      # "UninstallLinuxSubsystem",
 # "InstallHyperV",              # "UninstallHyperV",
 "SetPhotoViewerAssociation",    # "UnsetPhotoViewerAssociation",
 "AddPhotoViewerOpenWith",       # "RemovePhotoViewerOpenWith",
@@ -226,8 +229,43 @@ Function InstallTitusProgs {
 
 
 Function InstallJava {
-	Write-Output "Installing Java and stuff"
+	Write-Output "Installing Java"
 	choco install jre8 -y --ignore-checksum
+}
+
+Function InstallPlaynite {
+	Write-Output "Installing playnite"
+	choco install playnite -y --ignore-checksum
+}
+
+Function InstallDX {
+	Write-Output "Installing dx"
+	choco install directx -y --ignore-checksum
+}
+
+Function InstallPCSX2 {
+	Write-Output "Installing pcsx2"
+	choco install pcsx2 -y --ignore-checksum
+}
+
+Function InstallDolphin {
+	Write-Output "Installing dolphin"
+	choco install dolphin -y --ignore-checksum
+}
+
+Function InstallGameBooster {
+	Write-Output "Installing gamebooster"
+	choco install gamebooster -y --ignore-checksum
+}
+
+Function InstallSteam {
+	Write-Output "Installing steam"
+	choco install steam -y --ignore-checksum
+}
+
+Function InstallUplay {
+	Write-Output "Installing uplay"
+	choco install uplay -y --ignore-checksum
 }
 
 Function Installbatterybar {
@@ -238,16 +276,6 @@ Function Installbatterybar {
 Function Installanydesk {
 	Write-Output "Installing anydesk"
 	choco install anydesk.install -y --ignore-checksum
-}
-
-Function InstallUBlockChrome {
-	Write-Output "Installing anydesk"
-	choco install ublockorigin-chrome -y --ignore-checksum
-}
-
-Function InstallAdBlockFirefox {
-	Write-Output "Installing anydesk"
-	choco install adblockplus-firefox -y --ignore-checksum
 }
 
 Function Installaudacity {
@@ -265,9 +293,14 @@ Function Installcdburnerxp {
 	choco install cdburnerxp -y --ignore-checksum
 }
 
-Function Installfirefox {
-	Write-Output "Installing firefox"
+Function Installfirefoxesr {
+	Write-Output "Installing firefoxesr"
 	choco install firefoxesr -y --ignore-checksum
+}
+
+Function Installqbittorrent {
+	Write-Output "Installing qbittorrent"
+	choco install qbittorrent -y --ignore-checksum
 }
 
 Function Installthunderbird {
@@ -908,7 +941,7 @@ Function EnableCIMemoryIntegrity {
 	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" -Name "Enabled" -Type DWord -Value 1
 }
 
-# Disable Core Isolation Memory Integrity - 
+# Disable Core Isolation Memory Integrity -
 Function DisableCIMemoryIntegrity {
 	Write-Output "Disabling Core Isolation Memory Integrity..."
 	Remove-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" -Name "Enabled" -ErrorAction SilentlyContinue
