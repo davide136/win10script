@@ -36,16 +36,19 @@ $tweaks = @(
 #"InstallNotepadplusplus",
 #"InstallMediaPlayerClassic",
 #"Installgooglechrome",
+#"InstallUBlockChrome",
 #"Installdotnetfx",
 #"Installskype",
 #"Installccleaner",
 #"Installgimp",
 #"Installpdfcreator",
+#"Installqbittorrent",
 #"Installopenoffice",
 #"Installk-litecodecpackfull",
 #"Installteamviewer",
 #"Installthunderbird",
-#"Installfirefoxesr",
+#"Installfirefox",
+#"InstallAdBlockFirefox",
 #"Installcdburnerxp",
 #"Installsumatrapdf",
 #"Installaudacity",
@@ -76,24 +79,27 @@ $tweaks = @(
 
 ### Security Tweaks ###
 "SetUACLow",                  # "SetUACHigh",
-# "EnableSharingMappedDrives",  "DisableSharingMappedDrives",
-"DisableAdminShares",           # "EnableAdminShares",
-"DisableSMB1",                # "EnableSMB1",
-"DisableSMBServer",           # "EnableSMBServer",
-"DisableLLMNR",               # "EnableLLMNR",
+# "EnableSharingMappedDrives",  # "DisableSharingMappedDrives",
+# "DisableAdminShares",           # "EnableAdminShares",
+#"DisableSMB1",                # "EnableSMB1",
+# "DisableSMBServer",           # "EnableSMBServer",
+# "DisableLLMNR",               # "EnableLLMNR",
 #"SetCurrentNetworkPrivate",     # "SetCurrentNetworkPublic",
 #"SetUnknownNetworksPrivate",   "SetUnknownNetworksPublic",
 #"DisableNetDevicesAutoInst",  # "EnableNetDevicesAutoInst",
 "DisableCtrldFolderAccess",	# "EnableCtrldFolderAccess",
-"DisableFirewall",            # "EnableFirewall",
-"DisableDefender",            # "EnableDefender",
-"DisableDefenderCloud",       # "EnableDefenderCloud",
+#"DisableFirewall",
+"EnableFirewall",
+#"DisableDefender",
+"EnableDefender",
+#"DisableDefenderCloud",       # "EnableDefenderCloud",
 "EnableF8BootMenu",             # "DisableF8BootMenu",
 #"SetDEPOptOut",                 # "SetDEPOptIn",
 # "EnableCIMemoryIntegrity",    # "DisableCIMemoryIntegrity",
 #"DisableScriptHost",            # "EnableScriptHost",
 #"EnableDotNetStrongCrypto",     # "DisableDotNetStrongCrypto",
 "DisableMeltdownCompatFlag", # "EnableMeltdownCompatFlag"
+
 
 ### Service Tweaks ###
 "DisableUpdateMSRT",          # "EnableUpdateMSRT",
@@ -102,8 +108,7 @@ $tweaks = @(
 "DisableHomeGroups",          # "EnableHomeGroups",
 "DisableSharedExperiences",     # "EnableSharedExperiences",
 #"DisableRemoteAssistance",      # "EnableRemoteAssistance",
-#"EnableRemoteDesktop",
-"DisableRemoteDesktop",
+#"EnableRemoteDesktop",          # "DisableRemoteDesktop",
 "DisableAutoplay",              # "EnableAutoplay",
 "DisableAutorun",               # "EnableAutorun",
 "DisableStorageSense",        # "EnableStorageSense",
@@ -111,15 +116,14 @@ $tweaks = @(
 "DisableSuperfetch",          # "EnableSuperfetch",
 "DisableIndexing",            # "EnableIndexing",
 "SetBIOSTimeUTC",             # "SetBIOSTimeLocal",
-#"DisableHibernation",
-"EnableHibernation",
+#"DisableHibernation",		# "EnableHibernation",          #
 "EnableSleepButton",		# "DisableSleepButton",
 "DisableSleepTimeout",        # "EnableSleepTimeout",
-# "DisableFastStartup",
-"EnableFastStartup",
+# "DisableFastStartup",         # "EnableFastStartup",
 
 ### UI Tweaks ###
-"DisableActionCenter",          # "EnableActionCenter",
+#"DisableActionCenter",
+"EnableActionCenter",
 "DisableLockScreen",            # "EnableLockScreen",
 "DisableLockScreenRS1",       # "EnableLockScreenRS1",
 # "HideNetworkFromLockScreen",    # "ShowNetworkOnLockScreen",
@@ -130,10 +134,11 @@ $tweaks = @(
 "DisableFileDeleteConfirm",	# "EnableFileDeleteConfirm",
 #"HideTaskbarSearch",
 "ShowTaskbarSearchIcon",      # "ShowTaskbarSearchBox",
-"HideTaskView",                 # "ShowTaskView",
+#"HideTaskView",
+"ShowTaskView",
 # "ShowSmallTaskbarIcons",        # "ShowLargeTaskbarIcons",
 # "SetTaskbarCombineWhenFull",    # "SetTaskbarCombineNever",     # "SetTaskbarCombineAlways",
-# "HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
+"HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
 #"ShowTrayIcons",
 "HideTrayIcons",
 "DisableSearchAppInStore",      # "EnableSearchAppInStore",
@@ -173,11 +178,11 @@ $tweaks = @(
 
 ### Application Tweaks ###
 "DisableOneDrive",              # "EnableOneDrive",
-"UninstallOneDrive",            # "InstallOneDrive",
+#"UninstallOneDrive",            # "InstallOneDrive",
 "UninstallMsftBloat",           # "InstallMsftBloat",
 "UninstallThirdPartyBloat",     # "InstallThirdPartyBloat",
 # "UninstallWindowsStore",      # "InstallWindowsStore",
-#"DisableXboxFeatures",          # "EnableXboxFeatures",
+# "DisableXboxFeatures",          # "EnableXboxFeatures",
 "DisableAdobeFlash",            # "EnableAdobeFlash",
 "InstallMediaPlayer", 		# "UninstallMediaPlayer",
 #"UninstallInternetExplorer",  # "InstallInternetExplorer",
@@ -214,7 +219,7 @@ $tweaks = @(
 Function InstallTitusProgs {
 	Write-Output "Installing Chocolatey"
 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	choco install chocolatey-core.extension -y
+	choco update chocolatey-core.extension -y
 	Write-Output "Running O&O Shutup with Recommended Settings"
 	Import-Module BitsTransfer
 	Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg
@@ -223,104 +228,120 @@ Function InstallTitusProgs {
 }
 
 
+
 Function InstallJava {
 	Write-Output "Installing Java and stuff"
-	choco install jre8 -y --ignore-checksum
+	choco update jre8 -y --ignore-checksum
 }
 
 Function Installbatterybar {
 	Write-Output "Installing batterybar"
-	choco install batterybar -y --ignore-checksum
+	choco update batterybar -y --ignore-checksum
 }
 
 Function Installanydesk {
 	Write-Output "Installing anydesk"
-	choco install anydesk.install -y --ignore-checksum
+	choco update anydesk.install -y --ignore-checksum
+}
+
+Function InstallUBlockChrome {
+	Write-Output "Installing anydesk"
+	choco update ublockorigin-chrome -y --ignore-checksum
+}
+
+Function InstallAdBlockFirefox {
+	Write-Output "Installing anydesk"
+	choco update adblockplus-firefox -y --ignore-checksum
 }
 
 Function Installaudacity {
 	Write-Output "Installing audacity"
-	choco install audacity -y --ignore-checksum
+	choco update audacity -y --ignore-checksum
 }
 
 Function Installsumatrapdf {
 	Write-Output "Installing sumatrapdf"
-	choco install sumatrapdf.install -y --ignore-checksum
+	choco update sumatrapdf.install -y --ignore-checksum
 }
 
 Function Installcdburnerxp {
 	Write-Output "Installing cdburnerxp"
-	choco install cdburnerxp -y --ignore-checksum
+	choco update cdburnerxp -y --ignore-checksum
 }
 
-Function Installfirefoxesr {
-	Write-Output "Installing firefoxesr"
-	choco install firefoxesr -y --ignore-checksum
+Function Installfirefox {
+	Write-Output "Installing firefox"
+	choco update firefoxesr -y --ignore-checksum
 }
 
 Function Installthunderbird {
 	Write-Output "Installing thunderbird"
-	choco install thunderbird -y --ignore-checksum
+	choco update thunderbird -y --ignore-checksum
 }
 
 Function Installteamviewer {
 	Write-Output "Installing teamviewer"
-	choco install teamviewer -y --ignore-checksum
+	choco update teamviewer -y --ignore-checksum
 }
 
 Function Installk-litecodecpackfull {
 	Write-Output "Installing k-litecodecpackfull"
-	choco install k-litecodecpackfull -y --ignore-checksum
+	choco update k-litecodecpackfull -y --ignore-checksum
 }
 
 Function Installopenoffice {
 	Write-Output "Installing openoffice"
-	choco install openoffice -y --ignore-checksum
+	choco update openoffice -y --ignore-checksum
+}
+
+Function Installqbittorrent {
+	Write-Output "Installing qbittorrent"
+	choco update qbittorrent -y --ignore-checksum
 }
 
 Function Installpdfcreator {
 	Write-Output "Installing pdfcreator"
-	choco install pdfcreator -y --ignore-checksum
+	choco update pdfcreator -y --ignore-checksum
 }
 
 Function Installgimp {
 	Write-Output "Installing gimp"
-	choco install gimp -y --ignore-checksum
+	choco update gimp -y --ignore-checksum
 }
 
 Function Installccleaner {
 	Write-Output "Installing ccleaner"
-	choco install ccleaner -y --ignore-checksum
+	choco update ccleaner -y --ignore-checksum
 }
 
 Function Installskype {
 	Write-Output "Installing skype"
-	choco install skype -y --ignore-checksum
+	choco update skype -y --ignore-checksum
 }
 
 Function Installdotnetfx {
 	Write-Output "Installing dotnetfx"
-	choco install dotnetfx -y --ignore-checksum
+	choco update dotnetfx -y --ignore-checksum
 }
 
 Function Installgooglechrome {
 	Write-Output "Installing googlechrome"
-	choco install googlechrome -y --ignore-checksum
+	choco update googlechrome -y --ignore-checksum
 }
 
 Function Install7Zip {
 	Write-Output "Installing 7-Zip"
-	choco install 7zip -y --ignore-checksum
+	choco update 7zip -y --ignore-checksum
 }
 
 Function InstallNotepadplusplus {
 	Write-Output "Installing Notepad++"
-	choco install notepadplusplus -y --ignore-checksum
+	choco update notepadplusplus -y --ignore-checksum
 }
 
 Function InstallMediaPlayerClassic {
 	Write-Output "Installing Media Player Classic (VLC Alternative)"
-	choco install mpc-hc -y --ignore-checksum
+	choco update mpc-hc -y --ignore-checksum
 }
 
 ##########
@@ -896,7 +917,7 @@ Function EnableCIMemoryIntegrity {
 	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" -Name "Enabled" -Type DWord -Value 1
 }
 
-# Disable Core Isolation Memory Integrity - 
+# Disable Core Isolation Memory Integrity -
 Function DisableCIMemoryIntegrity {
 	Write-Output "Disabling Core Isolation Memory Integrity..."
 	Remove-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" -Name "Enabled" -ErrorAction SilentlyContinue
@@ -970,7 +991,7 @@ Function EnableUpdateMSRT {
 
 # Disable offering of drivers through Windows Update
 # Note: This doesn't work properly if you use a driver intended for another hardware model. E.g. Intel I219-V on WinServer works only with I219-LM driver.
-# Therefore Windows update will repeatedly try and fail to install I219-V driver indefinitely even if you use the tweak.
+# Therefore Windows update will repeatedly try and fail to update I219-V driver indefinitely even if you use the tweak.
 Function DisableUpdateDriver {
 	Write-Output "Disabling driver offering through Windows Update..."
 	If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata")) {
