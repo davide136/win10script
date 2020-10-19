@@ -224,8 +224,8 @@ $tweaks = @(
 #"UnpinTaskbarIcons",
 
 ### Auxiliary Functions ###
-"WaitForKey"
-"Restart"
+#"WaitForKey"
+"Exit"
 )
 
 #########
@@ -2177,7 +2177,7 @@ Function UninstallMsftBloat {
 	Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.MicrosoftPowerBIForWindows" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage
-	Get-AppxPackage "Microsoft.MicrosoftStickyNotes" | Remove-AppxPackage
+#	Get-AppxPackage "Microsoft.MicrosoftStickyNotes" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.MinecraftUWP" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.NetworkSpeedTest" | Remove-AppxPackage
@@ -2689,9 +2689,9 @@ Function WaitForKey {
 }
 
 # Restart computer
-Function Restart {
+Function Exit {
 	Write-Output "Restarting..."
-	Restart-Computer
+	Exit
 }
 
 ###########
