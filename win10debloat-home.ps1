@@ -95,7 +95,8 @@ $tweaks = @(
 	#"SetUnknownNetworksPrivate",   "SetUnknownNetworksPublic",
 	#"DisableNetDevicesAutoInst",  # "EnableNetDevicesAutoInst",
 	"DisableCtrldFolderAccess",	# "EnableCtrldFolderAccess",
-	 "DisableFirewall",            # "EnableFirewall",
+	# "DisableFirewall",            #
+	"EnableFirewall",
 	#"DisableDefender",            # "EnableDefender",
 	#"DisableDefenderCloud",       # "EnableDefenderCloud",
 	"EnableF8BootMenu",             # "DisableF8BootMenu",
@@ -126,7 +127,8 @@ $tweaks = @(
 	# "DisableFastStartup",         # "EnableFastStartup",
 
 	### UI Tweaks ###
-	"DisableActionCenter",          # "EnableActionCenter",
+	#"DisableActionCenter",          #
+	 "EnableActionCenter",
 	"DisableLockScreen",            # "EnableLockScreen",
 	"DisableLockScreenRS1",       # "EnableLockScreenRS1",
 	# "HideNetworkFromLockScreen",    # "ShowNetworkOnLockScreen",
