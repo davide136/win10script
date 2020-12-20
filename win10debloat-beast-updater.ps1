@@ -131,7 +131,8 @@ $tweaks = @(
 "DisableStorageSense",        # "EnableStorageSense",
 "DisableDefragmentation",     # "EnableDefragmentation",
 "DisableSuperfetch",          # "EnableSuperfetch",
-"DisableIndexing",            # "EnableIndexing",
+#"DisableIndexing",
+"EnableIndexing",
 "SetBIOSTimeUTC",             # "SetBIOSTimeLocal",
 #"DisableHibernation",		# "EnableHibernation",          #
 "EnableSleepButton",		# "DisableSleepButton",
